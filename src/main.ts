@@ -3,9 +3,14 @@ import { registerApp } from './global'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './service/axios_demo.ts'
+import request from './service'
 
 const app = createApp(App)
+
+request.request({
+  url: '/home/multidata',
+  method: 'GET'
+})
 
 registerApp(app)
 app.use(router)
